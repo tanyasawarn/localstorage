@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+ <title>DOM MANIPULATION</title>
+</head>
+<body>
+    <ul>
+        <li>first element</li>
+        <li>second element</li>
+        <li>third element</li>
+    </ul>
+    <script>
+        //root node
+        //console.log(document.documentElement);
+        // console.log(document.body);
+        // console.log(document.head);
+        //children
+        //console.log(document.body.childNodes);
+
+        //sibling tag
+        const ultag=document.body.children[0];
+        console.log(ultag.nextElementSibling);
+    </script>
+</body>
+
+</html>

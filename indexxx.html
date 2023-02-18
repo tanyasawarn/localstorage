@@ -13,7 +13,7 @@
     </header>
 
     <section class="container">
-      <form onsubmit="saveToLocalstorage"  id="my-form">
+      <form onsubmit="saveToLocalstorage(event)"  id="my-form">
         <h1>Add User</h1>
         <div class="msg"></div>
         <div>
@@ -24,12 +24,12 @@
           <label for="email">Email:</label>
           <input type="text" id="email">
         </div>
-        <input class="btn" type="submit" value="Submit">
+        <button class="btn" type="submit" >submit</button>
       </form>
 
-      <ul id="users"></ul>
+       <!--<ul id="users"></ul>
 
-      <!-- <ul class="items">
+      <ul class="items">
         <li class="item">Item 1</li>
         <li class="item">Item 2</li>
         <li class="item">Item 3</li>
@@ -37,20 +37,32 @@
     </section>
     
 
-    <script src="main.js">
+    <script type="text/javascript">
         function saveToLocalstorage(event)
         {
             event.preventDefault();
             const name=event.target.name.value;
             const email=event.target.email.value;
+            //display_name.innerHtml=name;
+           // display_email.innerHtml=email;
             localStorage.setItem('name', name);
-            localStorage.setItem('email',email);
-            const obj={
+           localStorage.setItem('email',email);
+           const obj={
               name,
               email
-            }
-            localStorage.setItem('userdetails',Json.stringify)
-        }
+             }
+        //     let myobj1=JSON.stringify(obj);
+            localStorage.setItem(obj.email,JSON.stringify(obj));
+            showUserOnScreen(obj)
+         }
+
+         function showUserOnScreen(obj)
+         {
+          const parentelem = document.getElementById('listOfItems')
+          const childele=document.createElement('li')
+          childele.textContent = obj.name + '-' + obj.email;
+          parentelem.append(childele)
+         }
     </script>
   </body>
 </html>
