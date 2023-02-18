@@ -62,6 +62,16 @@
           const childele=document.createElement('li')
           childele.textContent = obj.name + '-' + obj.email;
           parentelem.append(childele)
+          const del = document.createElement('input');
+          del.type = "button";
+          del.value = "Remove";
+          del.onclick = () => {
+            localStorage.removeItem(obj.email)
+            parentelem.removeChild(childele)
+          }
+          childele.append(del)
+          parentelem.append(childele)
+
          }
     </script>
   </body>
