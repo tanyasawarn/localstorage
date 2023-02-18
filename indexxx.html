@@ -68,8 +68,19 @@
           del.onclick = () => {
             localStorage.removeItem(obj.email)
             parentelem.removeChild(childele)
+
+            const editt = document.createElement('input');
+          editt.type = "button";
+          editt.value = "Remove";
+          editt.onclick = () => {
+            localStorage.removeItem(obj.email)
+            parentelem.removeChild(childele)
+            document.getElementById('nameInputTage').value=obj.name
+            document.getElementById('emailInputTage').value=obj.email
+
           }
           childele.append(del)
+          childele.append(editt)
           parentelem.append(childele)
 
          }
